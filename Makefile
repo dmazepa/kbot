@@ -1,7 +1,8 @@
 APP=$(shell basename $(shell git remote get-url origin))
-REGISTRY=dmazepa
+REGISTRY=dmazek
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETARCH=arm64
+TARGETOS=linux #linux darwin windows
+TARGETARCH=arm64 #amd64
 
 format:
 	gofmt -s -w ./
@@ -16,7 +17,7 @@ get:
 	go get
 
 build: format
-	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${shell dpkg --print-architecture} go build -v -o kbot -ldflags "-X="github.com/dmazepa/kbot/cmd.appVersion=${VERSION}
+	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o kbot -ldflags "-X="github.com/dmazepa/kbot/cmd.appVersion=${VERSION}
 
 image:
 	docker build . -t ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
