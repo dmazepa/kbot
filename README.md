@@ -1,11 +1,3 @@
-# kbot
-Week 2: Telegram Bot
+# week3-task5
 
-This is a project for simple Telegram bot, that you can find by url: t.me/dmazepa_bot
-
-Instruction:
-1. Commant to run: ./kbot start
-2. Kbot will answer on messages: 
-    - "/start Hello!"
-    - "/start Goodbye!"
-    - "/start How are you?"
+До вас звернувся колега QA з проханням допомогти у підготовці коду до тестування на різних платформах.
