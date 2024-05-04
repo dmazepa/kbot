@@ -16,7 +16,7 @@ jobs:
       - name: Run test
         run: make test
       - name: Save Github token 
-        run: export CR_PAT=${{ secrets.GITHUB_TOKEN }}
+        run: export CR_PAT=${{ secrets.GITOPS_TOKEN }}
       - name: Authenticating with a personal access token to ghcr.io
         run: echo $CR_PAT | docker login ghcr.io -u dmazepa --password-stdin
       - name: Build&Push
