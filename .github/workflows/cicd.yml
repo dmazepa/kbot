@@ -16,8 +16,11 @@ jobs:
       - name: Run test
         run: make test
       - name: 'Login to GitHub Container Registry'
-        run: |
-          echo $CR_PAT | docker login ghcr.io -u dmazepa --password-stdin
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: dmazepa
+          password: ${{secrets.GITHUB_TOKEN}}
       - name: Build&Push
         env:
           APP: "kbot"
