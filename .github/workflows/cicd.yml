@@ -23,8 +23,8 @@ jobs:
           password: ${{secrets.GITHUB_TOKEN}}
       - name: Build&Push
         env:
-          APP: "kbot"
-          REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+          APP_NAME: "kbot"
+          REGISTRY: ghcr.io/dmazepa
         run: make image push
 
   cd:
