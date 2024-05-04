@@ -3,10 +3,9 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   repository: dmazek
-  tag: "v1.0.5-a1274be-arm64"
+  tag: "v1.0.7-14c9005"
   arch: amd64
 secret:
   name: kbot
