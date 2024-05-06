@@ -11,15 +11,16 @@ lint:
 	golint
 
 all:
-	foo = $(arch)
-	ifdef foo
+	ifeq ("$(arch)", "")
 	TARGETARCH = arm64
+	echo "True passed"
 	else
 	TARGETARCH = "$(arch)"
+	echo "False passed"
 	endif
 
 test:
-	echo =${TARGETARCH};
+	echo ${TARGETARCH};
 get:
 	go get
 
