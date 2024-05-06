@@ -11,10 +11,11 @@ lint:
 	golint
 
 all:
-	ifeq ($(arch),null)
-    	TARGETARCH=arm64
+	foo = $(arch)
+	ifdef foo
+	TARGETARCH = arm64
 	else
-    	TARGETARCH=$(arch)
+	TARGETARCH = $(arch)
 	endif
 
 test:
