@@ -11,7 +11,7 @@ lint:
 	golint
 
 test:
-	go test -v
+	echo $(arch)
 
 get:
 	go get
