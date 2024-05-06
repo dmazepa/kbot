@@ -2,7 +2,7 @@ APP=$(shell basename $(shell git remote get-url origin))
 REGISTRY=dmazek
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS=linux #linux darwin windows
-#TARGETARCH=arm64 #amd64
+TARGETARCH=arm64 #amd64
 
 format:
 	gofmt -s -w ./
@@ -10,17 +10,9 @@ format:
 lint: 
 	golint
 
-all:
-	ifeq ("$(arch)", "")
-	TARGETARCH = arm64
-	echo "True passed"
-	else
-	TARGETARCH = "$(arch)"
-	echo "False passed"
-	endif
-
 test:
-	echo ${TARGETARCH};
+	go test -v
+
 get:
 	go get
 
