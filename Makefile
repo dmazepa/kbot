@@ -12,9 +12,9 @@ lint:
 
 all:
 	ifeq ($(arch),null)
-        TARGETARCH=arm64;\
+    TARGETARCH=arm64;\
 	else
-        ARGETARCH=$(arch);\
+    TARGETARCH=$(arch);\
 	endif
 
 test:
