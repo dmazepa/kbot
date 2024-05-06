@@ -5,7 +5,7 @@
 replicaCount: 1
 image:
   repository: dmazek
-  tag: "v1.0.7-a82d14d"
+  tag: "v1.0.7-baf26d5"
   arch: amd64
 secret:
   name: kbot
