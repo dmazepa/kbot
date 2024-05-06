@@ -19,7 +19,7 @@ all:
 	endif
 
 test:
-	echo "$(arch)";
+	echo =${TARGETARCH};
 get:
 	go get
 
