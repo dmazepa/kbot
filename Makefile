@@ -15,11 +15,11 @@ all:
 	ifdef foo
 	TARGETARCH = arm64
 	else
-	TARGETARCH = $(arch)
+	TARGETARCH = "$(arch)"
 	endif
 
 test:
-	echo ${TARGETARCH};
+	echo "$(arch)";
 get:
 	go get
 
