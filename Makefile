@@ -13,15 +13,12 @@ lint:
 all:
 	ifeq ($(arch),null)
         TARGETARCH=arm64;\
-        echo ${TARGETARCH};\
 	else
         ARGETARCH=$(arch);\
-		echo ${TARGETARCH};\
 	endif
 
 test:
-	go test -v
-
+	echo ${TARGETARCH};
 get:
 	go get
 
